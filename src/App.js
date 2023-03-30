@@ -7,6 +7,7 @@ import Ixtab from './pages/Ixtab';
 import Udumbara from './pages/Udumbara';
 import Okina from './pages/Okina';
 import Leucrotta from './pages/Leucrotta';
+import Minhocao from './pages/Minhocao';
 
 import './App.css';
 
@@ -20,7 +21,8 @@ function App() {
         <Route path="/ixtab" element={<Ixtab />} />
         <Route path="/udumbara" element={<Udumbara />} />
         <Route path="/okina" element={<Okina />} />
-        <Route path="leucrotta" element={<Leucrotta />} />
+        <Route path="/leucrotta" element={<Leucrotta />} />
+        <Route path="/minhocao" element={<Minhocao />} />
       </Routes>
     </>
   );
