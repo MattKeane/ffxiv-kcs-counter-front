@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Sphatika from './pages/Sphatika';
 import Ruminator from './pages/Ruminator';
 import Ixtab from './pages/Ixtab';
+import Udumbara from './pages/Udumbara';
 
 import './App.css';
 
@@ -15,6 +16,7 @@ function App() {
         <Route path="/sphatika" element={<Sphatika />} />
         <Route path="/ruminator" element={<Ruminator />} />
         <Route path="/ixtab" element={<Ixtab />} />
+        <Route path="/udumbara" element={<Udumbara />} />
       </Routes>
     </>
   );
