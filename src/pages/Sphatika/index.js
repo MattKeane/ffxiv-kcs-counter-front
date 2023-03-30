@@ -1,4 +1,4 @@
-import MobCounter from '../../components/MobCounter';
+import SpawnAttempt from '../../components/SpawnAttempt';
 
 export default function Sphatika() {
     const mobs = [
@@ -16,17 +16,5 @@ export default function Sphatika() {
         },
     ];
 
-    const mobCounters = mobs.map(mob => (
-        <MobCounter 
-            name={ mob.name } 
-            defaultLap={ mob.defaultLap }
-        />)
-    );
-
-    return (
-        <>
-            <h2>Sphatika</h2>
-            { mobCounters }
-        </>
-    );
+    return <SpawnAttempt mobs={ mobs } name="Sphatika" />;
 }
