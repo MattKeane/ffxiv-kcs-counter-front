@@ -47,7 +47,7 @@ export default function MobCounter({ name, defaultLap }) {
             </button>
             </div>
             <div>
-                <label htmlFor="lapCount">Mobs per lab:</label>
+                <label htmlFor="lapCount">Mobs per lap:</label>
                 <input 
                     type="number" 
                     value={ lapCount } 
