@@ -16,6 +16,10 @@ export default function Home() {
             link: '/ixtab',
         },
         {
+            name: 'Udumbara',
+            link: '/udumbara',
+        },
+        {
             name: 'Okina',
             link: '/okina',
         },
