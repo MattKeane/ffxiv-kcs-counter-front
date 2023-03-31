@@ -13,7 +13,7 @@ import './App.css';
 
 function App() {
   return (
-    <>
+    <div className="app">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/sphatika" element={<Sphatika />} />
@@ -24,7 +24,7 @@ function App() {
         <Route path="/leucrotta" element={<Leucrotta />} />
         <Route path="/minhocao" element={<Minhocao />} />
       </Routes>
-    </>
+    </div>
   );
 }
 

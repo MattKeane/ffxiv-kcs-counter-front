@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import './style.css';
+
 export default function MobCounter({ name, defaultLap }) {
     // component for counting kills of an individual mob
     // name prop specifies the name prop
@@ -38,8 +40,8 @@ export default function MobCounter({ name, defaultLap }) {
     return (
         <form>
             <h3>{ name }</h3>
-            <p>{ count }</p>
-            <div>
+            <p>{ count } / 100</p>
+            <div className="buttonContainer">
                 <button onClick={ addOne }>
                     +1
                 </button>
@@ -47,13 +49,13 @@ export default function MobCounter({ name, defaultLap }) {
                     -1
                 </button>
             </div>
-            <div>
-            <button onClick={ addLap }>
-                +{ lapCount }
-            </button>
-            <button onClick={ subtractLap }>
-                -{ lapCount }
-            </button>
+            <div className="buttonContainer">
+                <button onClick={ addLap }>
+                    +{ lapCount }
+                </button>
+                <button onClick={ subtractLap }>
+                    -{ lapCount }
+                </button>
             </div>
             <div>
                 <label htmlFor="lapCount">Mobs per lap:</label>
