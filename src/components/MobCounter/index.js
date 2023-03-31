@@ -1,30 +1,39 @@
 import { useState } from 'react';
 
 export default function MobCounter({ name, defaultLap }) {
+    // component for counting kills of an individual mob
+    // name prop specifies the name prop
+    // defaultLap prop specifies how many mobs lap
+
     const [count, setCount] = useState(0);
     const [lapCount, setLapCount] = useState(defaultLap);
 
     const addOne = e => {
+        // increments the number of mobs killed by one
         e.preventDefault();
         setCount(count => count + 1);
     };
 
     const subtractOne = e => {
+        // decrements the number of mobs killed by one
         e.preventDefault();
         setCount(count => count - 1 < 0 ? 0 : count -1);
     };
 
     const addLap = e => {
+        // increments the number of mobs killed by the amount in a lap
         e.preventDefault();
         setCount(count => count + lapCount);
     };
 
     const subtractLap = e => {
+        // decrements the number of mobs killed by the amount in a lap
         e.preventDefault();
         setCount(count => count - lapCount < 0 ? 0: count - lapCount);
     };
 
     const handleLapCountChange = e => setLapCount(parseInt(e.target.value));
+    // changes the number of mobs in each lap
 
     return (
         <form>
