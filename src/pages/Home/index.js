@@ -1,43 +1,26 @@
-import { Link } from 'react-router-dom';
+import { createRoom } from '../../utilities/rooms-service';
 import './style.css';
 
 export default function Home() {
     const sRanks = [
-        {
-            name: 'Sphatika',
-            link: '/sphatika',
-        },
-        {
-            name: 'Ruminator',
-            link: '/ruminator',
-        },
-        {
-            name: 'Ixtab',
-            link: '/ixtab',
-        },
-        {
-            name: 'Udumbara',
-            link: '/udumbara',
-        },
-        {
-            name: 'Okina',
-            link: '/okina',
-        },
-        {
-            name: 'Leucrotta',
-            link: '/leucrotta',
-        },
-        {
-            name: 'Minhocao',
-            link: '/minhocao',
-        },
+        'Sphatika',
+        'Ruminator',
+        'Ixtab',
+        'Udumbara',
+        'Okina',
+        'Leucrotta',
+        'Minhocao',
     ];
 
-    const sRankLinks = sRanks.map(sRank => (
-        <li>
-            <Link to={ sRank.link }>
-                { sRank.name }
-            </Link>
+    const handleClick = e => {
+        createRoom({sRank: e.target.id});
+    };
+
+    const sRankLinks = sRanks.map((sRank, i) => (
+        <li key={ i }>
+            <button id={ sRank } onClick={ handleClick }>
+                { sRank }
+            </button>
         </li>)
     );
 
