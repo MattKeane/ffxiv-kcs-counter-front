@@ -1,7 +1,11 @@
+import { useNavigate } from 'react-router-dom';
+
 import { createRoom } from '../../utilities/rooms-service';
 import './style.css';
 
 export default function Home() {
+    const navigate = useNavigate();
+
     const sRanks = [
         'Sphatika',
         'Ruminator',
@@ -12,8 +16,9 @@ export default function Home() {
         'Minhocao',
     ];
 
-    const handleClick = e => {
-        createRoom({sRank: e.target.id});
+    const handleClick = async e => {
+        const { room } = await createRoom(e.target.id);
+        navigate(`/${room}`)
     };
 
     const sRankLinks = sRanks.map((sRank, i) => (
