@@ -1,5 +1,8 @@
 import { useState } from 'react';
-import { incrementMob } from '../../utilities/socket-service';
+import { 
+    incrementMob,
+    decrementMob, 
+} from '../../utilities/socket-service';
 
 import './style.css';
 
@@ -21,19 +24,26 @@ export default function MobCounter({ name, defaultLap, room, startingCount }) {
     const subtractOne = e => {
         // decrements the number of mobs killed by one
         e.preventDefault();
-        setCount(count => count - 1 < 0 ? 0 : count -1);
+        if (count - 1 >= 0) {
+            incrementMob(room, name, -1);
+            setCount(count => count -1);
+        }
     };
 
     const addLap = e => {
         // increments the number of mobs killed by the amount in a lap
         e.preventDefault();
+        incrementMob(room, name, lapCount);
         setCount(count => count + lapCount);
     };
 
     const subtractLap = e => {
         // decrements the number of mobs killed by the amount in a lap
         e.preventDefault();
-        setCount(count => count - lapCount < 0 ? 0: count - lapCount);
+        if (count - lapCount >= 0) {
+            incrementMob(room, name, -lapCount);
+            setCount(count => count - lapCount);
+        }
     };
 
     const handleLapCountChange = e => setLapCount(parseInt(e.target.value));
