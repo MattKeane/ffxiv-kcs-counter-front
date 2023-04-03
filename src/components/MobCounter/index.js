@@ -1,7 +1,10 @@
-import { useState } from 'react';
+import { 
+    useState,
+    useEffect, 
+} from 'react';
 import { 
     incrementMob,
-    decrementMob, 
+    registerUpdateListener, 
 } from '../../utilities/socket-service';
 
 import './style.css';
@@ -13,6 +16,10 @@ export default function MobCounter({ name, defaultLap, room, startingCount }) {
 
     const [count, setCount] = useState(startingCount);
     const [lapCount, setLapCount] = useState(defaultLap);
+
+    useEffect(() => {
+        registerUpdateListener(name, setCount);
+    }, [name]);
 
     const addOne = e => {
         // increments the number of mobs killed by one

@@ -17,3 +17,7 @@ export function joinRoom(room) {
 export function incrementMob(room, mob, amount) {
     socket.emit('increment', room, mob, amount);
 };
+
+export function registerUpdateListener(mob, handler) {
+    socket.on(`update:${mob}`, updatedTotal => handler(updatedTotal));
+};
