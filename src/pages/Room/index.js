@@ -1,19 +1,12 @@
-import {
-    useRef,
-    useEffect,
-} from 'react';
+import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { io } from 'socket.io-client';
+import { joinRoom } from '../../utilities/socket-service';
 
 export default function Room() {
-    const socket = useRef(null);
     const { room } = useParams();
     
     useEffect(() => {
-        socket.current = io('/spawn');
-        socket.current.emit('joinRoom', room, res => {
-            console.log(res);
-        });
+        joinRoom(room, console.log);
     }, [room])
 
     return <h3>{ room }</h3>;
