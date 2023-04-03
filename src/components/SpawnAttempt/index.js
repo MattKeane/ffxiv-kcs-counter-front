@@ -7,10 +7,12 @@ export default function SpawnAttempt({ name, mobs, room }) {
     // name prop is the name of the S rank to be spawned
     // mobs prop is an array of objects representing each mob required for the spawn
 
-    const mobCounters = mobs.map(mob => (
+    const mobCounters = mobs.map((mob, i) => (
         <MobCounter 
+            key={ i }
             name={ mob.name } 
             defaultLap={ mob.defaultLap }
+            startingCount={ mob.count }
             room={ room }
         />)
     );

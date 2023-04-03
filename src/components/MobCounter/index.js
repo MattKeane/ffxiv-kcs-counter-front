@@ -3,12 +3,12 @@ import { incrementMob } from '../../utilities/socket-service';
 
 import './style.css';
 
-export default function MobCounter({ name, defaultLap, room }) {
+export default function MobCounter({ name, defaultLap, room, startingCount }) {
     // component for counting kills of an individual mob
     // name prop specifies the name prop
     // defaultLap prop specifies how many mobs lap
 
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(startingCount);
     const [lapCount, setLapCount] = useState(defaultLap);
 
     const addOne = e => {
