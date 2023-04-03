@@ -26,7 +26,7 @@ export default function Room() {
             ?
             <p>Loading...</p>
             :
-            <SpawnAttempt name={ sRank } mobs={ mobs } />
+            <SpawnAttempt name={ sRank } mobs={ mobs } room={ room } />
         }
         </>
     );

@@ -12,4 +12,8 @@ export function joinRoom(room) {
             }
         })
     });
-}
+};
+
+export function incrementMob(room, mob, amount) {
+    socket.emit('increment', room, mob, amount);
+};
