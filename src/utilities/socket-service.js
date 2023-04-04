@@ -20,4 +20,8 @@ export function incrementMob(room, mob, amount) {
 
 export function registerUpdateListener(mob, handler) {
     socket.on(`update:${mob}`, updatedTotal => handler(updatedTotal));
+    const removeUpdateListener = () => {
+        socket.off(`update:${mob}`, handler);
+    };
+    return removeUpdateListener();
 };

@@ -18,7 +18,7 @@ export default function MobCounter({ name, defaultLap, room, startingCount }) {
     const [lapCount, setLapCount] = useState(defaultLap);
 
     useEffect(() => {
-        registerUpdateListener(name, setCount);
+        return registerUpdateListener(name, setCount);
     }, [name]);
 
     const addOne = e => {
