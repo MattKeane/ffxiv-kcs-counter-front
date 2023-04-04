@@ -24,8 +24,10 @@ export default function MobCounter({ name, defaultLap, room, startingCount }) {
     const addOne = e => {
         // increments the number of mobs killed by one
         e.preventDefault();
-        incrementMob(room, name, 1);
-        setCount(count => count + 1);
+        if (count + 1 <= 100) {
+            incrementMob(room, name, 1);
+            setCount(count => count + 1);
+        }
     };
 
     const subtractOne = e => {
@@ -40,8 +42,13 @@ export default function MobCounter({ name, defaultLap, room, startingCount }) {
     const addLap = e => {
         // increments the number of mobs killed by the amount in a lap
         e.preventDefault();
-        incrementMob(room, name, lapCount);
-        setCount(count => count + lapCount);
+        if (count + lapCount <= 100) {
+            incrementMob(room, name, lapCount);
+            setCount(count => count + lapCount);
+        } else {
+            incrementMob(room, name, 100 - count);
+            setCount(100);
+        }
     };
 
     const subtractLap = e => {
@@ -50,6 +57,9 @@ export default function MobCounter({ name, defaultLap, room, startingCount }) {
         if (count - lapCount >= 0) {
             incrementMob(room, name, -lapCount);
             setCount(count => count - lapCount);
+        } else {
+            incrementMob(room, name, -count);
+            setCount(0);
         }
     };
 
