@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { createRoom } from '../../utilities/rooms-service';
 import './style.css';
 
-export default function Home() {
+export default function Home({ message }) {
     const navigate = useNavigate();
 
     const sRanks = [
@@ -32,6 +32,11 @@ export default function Home() {
     return (
         <>
             <h2>Select an S Rank to Attempt</h2>
+            {
+                message
+                &&
+                <p>{ message }</p>
+            }
             <ul>
                 { sRankLinks }
             </ul>
