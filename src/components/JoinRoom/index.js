@@ -9,7 +9,7 @@ export default function JoinRoom() {
 
     const handleSubmit = e => {
         e.preventDefault();
-        navigate(roomCode);
+        navigate(roomCode.toLowerCase());
     }
 
     return (
