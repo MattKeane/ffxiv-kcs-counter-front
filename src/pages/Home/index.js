@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
+import JoinRoom from '../../components/JoinRoom';
 import { createRoom } from '../../utilities/rooms-service';
 import './style.css';
 
@@ -31,12 +32,14 @@ export default function Home({ message }) {
 
     return (
         <>
-            <h2>Select an S Rank to Attempt</h2>
             {
                 message
                 &&
                 <p>{ message }</p>
             }
+            <h2>Join a Spawn Attempt in Progress</h2>
+            <JoinRoom />        
+            <h2>Start New Spawn Attempt</h2>
             <ul>
                 { sRankLinks }
             </ul>
