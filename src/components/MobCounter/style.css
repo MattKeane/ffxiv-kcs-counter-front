@@ -1,9 +1,10 @@
 form {
     display: inline-block;
-    margin: 0.25rem;
-    padding: 0.5rem;
+    margin: 0.5rem;
+    padding: 1rem;
     border: 2px solid #f2c363;
     border-radius: 0.5rem;
+    min-width: 200px;
 }
 
 h3 {
@@ -29,6 +30,12 @@ label {
 }
 
 input {
-    width: 75%;
+    width: 3rem;
     text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    form {
+        display: block;
+    }
 }
