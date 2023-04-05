@@ -15,6 +15,7 @@ function App() {
 
   return (
     <div className="app">
+      <h1>TeamSpawn</h1>
       <Routes>
         <Route path="/" element={<Home message={ message } />} />
         <Route path=":room" element={ <Room setMessage={ setMessage } /> } />
