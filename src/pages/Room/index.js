@@ -4,7 +4,8 @@ import {
 } from 'react';
 import { 
     useParams,
-    useNavigate 
+    useNavigate,
+    Link
 } from 'react-router-dom';
 import { joinRoom } from '../../utilities/socket-service';
 import SpawnAttempt from '../../components/SpawnAttempt';
@@ -32,6 +33,7 @@ export default function Room({ setMessage }) {
 
     return (
         <>
+           <h1><Link to="/">TeamSpawn</Link></h1>
         {
             loading
             ?

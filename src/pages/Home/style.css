@@ -6,3 +6,8 @@ ul {
 li {
     margin-top: .25rem;
 }
+
+.MuiButton-root,
+button {
+    font-family: 'Silkscreen', cursive;
+}

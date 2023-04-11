@@ -33,6 +33,7 @@ export default function Home({ message }) {
 
     return (
         <>
+           <h1>TeamSpawn</h1>
             {
                 message
                 &&
