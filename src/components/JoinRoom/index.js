@@ -1,5 +1,10 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { 
+    Button,
+    Card,
+    TextField,
+} from '@mui/material';
 
 export default function JoinRoom() {
     const [roomCode, setRoomCode] = useState('');
@@ -8,24 +13,28 @@ export default function JoinRoom() {
     const handleChange = e => setRoomCode(e.target.value);
 
     const handleSubmit = e => {
-        e.preventDefault();
         navigate(roomCode.toLowerCase());
     }
 
     return (
-        <form onSubmit={ handleSubmit }>
-            <div>
-                <label htmlFor="roomCode">Enter room code:</label>
-                <input 
-                    type="text" 
-                    name="roomCode" 
-                    id="roomCode" 
-                    maxLength={ 4 }
+        <>
+            <h2>Join a Spawn Attempt in Progress</h2>
+            <div style={{ marginBottom: ".5rem" }}>
+                <TextField
+                    label="Room Code"
+                    name="roomCode"
+                    id="roomCode"
                     value={ roomCode }
-                    onChange={ handleChange } 
+                    onChange={ handleChange }
+                    variant="standard"
                 />
             </div>
-            <button>Join</button>
-        </form>
+            <Button 
+                variant="contained"
+                onClick={ handleSubmit }
+            >
+                Join
+            </Button>
+        </>
     );
 };

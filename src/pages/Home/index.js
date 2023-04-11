@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { Button } from '@mui/material';
 
 import JoinRoom from '../../components/JoinRoom';
 import { createRoom } from '../../utilities/rooms-service';
@@ -24,9 +25,9 @@ export default function Home({ message }) {
 
     const sRankLinks = sRanks.map((sRank, i) => (
         <li key={ i }>
-            <button id={ sRank } onClick={ handleClick }>
+            <Button id={ sRank } onClick={ handleClick }>
                 { sRank }
-            </button>
+            </Button>
         </li>)
     );
 
@@ -37,7 +38,6 @@ export default function Home({ message }) {
                 &&
                 <p>{ message }</p>
             }
-            <h2>Join a Spawn Attempt in Progress</h2>
             <JoinRoom />        
             <h2>Start New Spawn Attempt</h2>
             <ul>

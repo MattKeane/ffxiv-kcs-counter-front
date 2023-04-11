@@ -2,6 +2,12 @@ import {
     useState,
     useEffect, 
 } from 'react';
+import {
+    Card,
+    ButtonGroup,
+    Button,
+    TextField,
+} from '@mui/material';
 import { 
     incrementMob,
     registerUpdateListener, 
@@ -63,38 +69,56 @@ export default function MobCounter({ name, defaultLap, room, startingCount }) {
         }
     };
 
-    const handleLapCountChange = e => setLapCount(parseInt(e.target.value));
-    // changes the number of mobs in each lap
+    const handleLapCountChange = e => {
+        // changes the number of mobs in each lap
+        const newCount = parseInt(e.target.value);
+        if (newCount) {
+            setLapCount(newCount);
+        } else {
+            setLapCount(0);
+        }
+    };
 
     return (
-        <form>
+        <Card variant="outlined" sx={{ display: "inline-block", margin: 2 }}>
             <h3>{ name }</h3>
             <p>{ count } / 100</p>
-            <div className="buttonContainer">
-                <button onClick={ addOne }>
+            <div style={{ display: 'flex', justifyContent: 'space-evenly'}}>
+            <ButtonGroup 
+                orientation="vertical" 
+                variant="contained"
+                size="large"
+            >
+                <Button onClick={ addOne }>
                     +1
-                </button>
-                <button onClick={ subtractOne }>
+                </Button>
+                <Button onClick={ subtractOne }>
                     -1
-                </button>
-            </div>
-            <div className="buttonContainer">
-                <button onClick={ addLap }>
+                </Button>
+            </ButtonGroup>
+            <ButtonGroup 
+                orientation="vertical"
+                variant="contained"
+                size="large"
+            >
+                <Button onClick={ addLap }>
                     +{ lapCount }
-                </button>
-                <button onClick={ subtractLap }>
+                </Button>
+                <Button onClick={ subtractLap }>
                     -{ lapCount }
-                </button>
+                </Button>
+            </ButtonGroup>
             </div>
-            <div>
-                <label htmlFor="lapCount">Mobs per lap:</label>
-                <input 
-                    type="number" 
-                    value={ lapCount } 
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-evenly', margin: 1, padding: 10 }}>
+                <TextField
+                    label="Mobs per Lap"
+                    inputProps={{ inputMode: 'numeric', pattern: '[0-9]* '}}
+                    value={ lapCount }
                     onChange={ handleLapCountChange }
-                    min={ 0 } 
+                    variant="filled"
+                    size="small"
                 />
             </div>
-        </form>
+        </Card>
     )
 }
