@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 body {
-  font-family: 'Inter', sans-serif;
+  /* font-family: 'Inter', sans-serif; */
+  font-family: 'VT323', monospace;
   /* background-color: #000044;
   color: #f2c363; */
+  background: #29c5ff url('./assets/bg-sprite1.png') no-repeat center center;
+  background-attachment: fixed;
 }
