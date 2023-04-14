@@ -32,8 +32,8 @@ export default function Room({ setMessage }) {
     }, [room, setMessage, navigate]);
 
     return (
-        <>
-           <h1><Link to="/">TeamSpawn</Link></h1>
+        <main className="room">      
+            <h1><Link to="/" className="logo">TeamSpawn</Link></h1>
         {
             loading
             ?
@@ -41,6 +41,6 @@ export default function Room({ setMessage }) {
             :
             <SpawnAttempt name={ sRank } mobs={ mobs } room={ room } />
         }
-        </>
+        </main>
     );
 }

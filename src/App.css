@@ -7,29 +7,64 @@ https://codepen.io/XaelGa/pen/rqYZNP
 https://finalfantasy.fandom.com/wiki/Title_screen/Gallery
 */
 
-.app {
-  text-align: center;
+/* font-family: 'VT323', monospace; */
+/* font-family: "Silkscreen", cursive; */
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.logo {
-  margin: 1rem auto;
-  width: 400px;
-  height: 100px;
-  text-indent: -9999px;
-  background: transparent url("./assets/logo-teamspawn.png") no-repeat center center;
-  background-size: cover;
+/* Typography */
+h1 {
+  margin: 0;
+  width: 100%;
 }
 
+/* Utility */
 .d-none {
   display: none !important;
 }
 
+/* Layout */
+.app {
+  text-align: center;
+}
+
+.home, .room {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.logo {
+  margin: 0 auto 1rem;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 4 / 1;
+  text-indent: -9999px;
+  background: transparent url("./assets/logo-teamspawn.png") no-repeat center center;
+  background-size: cover;
+  display: block;
+}
+
+.spawn-name {
+  font-size: 2.75rem;
+  letter-spacing: -5px;
+  margin: .5rem 0;
+}
+
+/* Dialogs */
 .dialog {
   display: inline-block;
-  margin: 0.75rem 0.75rem;
+  margin: 1.5rem 0.75rem;
   border: solid 2px #424542;
   /* box-shadow: 2px 2px #e7dfe7, -2px -2px #e7dfe7, 2px -2px #e7dfe7, -2px 2px #e7dfe7, 4px -4px #9c9a9c, -4px 4px #7b757b, 0 4px #424542; */
-  /* width: 500px; */
   box-shadow: 0 0 0 3px #e7dfe7;
   padding: 5px 10px;
   background: #04009d;
@@ -48,11 +83,20 @@ https://finalfantasy.fandom.com/wiki/Title_screen/Gallery
 }
 
 .dialog h2 {
-  /* font-family: 'VT323', monospace; */
-  /* font-family: "Silkscreen", cursive; */
   font-weight: bold;
 }
 
+.dialog h3 {
+  font-size: 1.26rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.dialog p {
+  text-align: center;
+}
+
+/* Buttons */
 .dialog button {
   font-family: "Silkscreen", cursive;
   color: #fff;
@@ -65,6 +109,14 @@ https://finalfantasy.fandom.com/wiki/Title_screen/Gallery
   background: none;
 }
 
+.dialog button.MuiButtonGroup-grouped {
+  background: none;
+  /* border: 1px solid #fff; */
+  border-color: #fff !important;
+  padding: .25rem .5rem;
+}
+
+.MuiTextField-root.text-input,
 .MuiInputBase-input,
 #roomCode {
   color: #fff;
@@ -74,6 +126,11 @@ https://finalfantasy.fandom.com/wiki/Title_screen/Gallery
   max-width: 240px; /* font family is making this way wider */
 }
 
+.MuiTextField-root.text-input {
+  max-width: 150px;
+}
+
+.MuiTextField-root.text-input,
 .MuiInputLabel-root,
 #roomCode::placeholder,
 #roomCode::before,
@@ -82,14 +139,17 @@ https://finalfantasy.fandom.com/wiki/Title_screen/Gallery
   color: #fff !important;
 }
 
+.text-input .MuiInputBase-root:before,
 .MuiInput-root.MuiInput-underline:before {
   border-bottom: 1px solid rgba(255, 255, 255, 0.8);
 }
 
+.text-input .MuiInputBase-root:hover:not(.Mui-disabled, .Mui-error):before,
 .MuiInput-root:hover:not(.Mui-disabled, .Mui-error):before {
   border-bottom: 1px solid #fc3 !important;
 }
 
+.text-input .MuiInputBase-root:after,
 .MuiInput-root.MuiInput-underline:after {
   border-bottom: 2px solid #fff;
 }
@@ -97,4 +157,17 @@ https://finalfantasy.fandom.com/wiki/Title_screen/Gallery
 #joinRoomBtn {
   padding: .25rem 1rem;
   border: 1px solid #fff;
+}
+
+.text-input input {
+  color: #fff;
+  padding-left: 0;
+}
+
+.MuiTextField-root.text-input .MuiFormLabel-root {
+  transform: translate(0, 4px) scale(0.75)
+}
+
+.room .dialog {
+  min-width: 300px;
 }

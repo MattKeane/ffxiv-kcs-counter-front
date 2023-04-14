@@ -1,11 +1,6 @@
 .home {
     background: #000;
-    min-height: 100vh;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    color: #fff;   
 }
 
 ul {
@@ -21,8 +16,6 @@ li {
 button {
   font-family: "Silkscreen", cursive;
 }
-
-
 
 .home-row {
   display: flex;
