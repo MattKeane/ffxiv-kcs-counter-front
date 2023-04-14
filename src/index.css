@@ -7,6 +7,7 @@ html {
 }
 
 body {
+  margin: 0;
   /* font-family: 'Inter', sans-serif; */
   /* font-family: 'VT323', monospace; */
   /* font-family: 'DotGothic16', monospace; */
@@ -16,4 +17,5 @@ body {
   /* bg source: https://www.spriters-resource.com/pc_computer/finalfantasy4pixelremaster/sheet/177206/?source=genre*/
   background: #29c5ff url('./assets/bg-sprite1.png') no-repeat center center;
   background-attachment: fixed;
+  background-size: cover;
 }
