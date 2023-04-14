@@ -39,13 +39,15 @@ export default function Home({ message }) {
                 &&
                 <p>{ message }</p>
             }
-            <JoinRoom />    
-            <section className="dialog">
-                <h2>New Spawn</h2>
-                <ul>
-                    { sRankLinks }
-                </ul>
-            </section>  
+            <div className="home-row">
+                <JoinRoom />    
+                <section className="dialog">
+                    <h2>New Spawn</h2>
+                    <ul className="">
+                        { sRankLinks }
+                    </ul>
+                </section> 
+            </div>
         </main>
     );
 }
