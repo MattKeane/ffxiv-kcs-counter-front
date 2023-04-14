@@ -40,5 +40,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://teamspawn.herokuapp.com"
+  "proxy": "https://localhost:3001"
 }
