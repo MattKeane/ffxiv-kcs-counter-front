@@ -4,7 +4,8 @@ import {
 } from 'react';
 import { 
     useParams,
-    useNavigate 
+    useNavigate,
+    Link
 } from 'react-router-dom';
 import { joinRoom } from '../../utilities/socket-service';
 import SpawnAttempt from '../../components/SpawnAttempt';
@@ -31,7 +32,8 @@ export default function Room({ setMessage }) {
     }, [room, setMessage, navigate]);
 
     return (
-        <>
+        <main className="room">      
+            <h1><Link to="/" className="logo">TeamSpawn</Link></h1>
         {
             loading
             ?
@@ -39,6 +41,6 @@ export default function Room({ setMessage }) {
             :
             <SpawnAttempt name={ sRank } mobs={ mobs } room={ room } />
         }
-        </>
+        </main>
     );
 }

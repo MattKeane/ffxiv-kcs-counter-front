@@ -32,17 +32,22 @@ export default function Home({ message }) {
     );
 
     return (
-        <>
+        <main className="home">
+           <h1 className="logo">TeamSpawn</h1>
             {
                 message
                 &&
                 <p>{ message }</p>
             }
-            <JoinRoom />        
-            <h2>Start New Spawn Attempt</h2>
-            <ul>
-                { sRankLinks }
-            </ul>
-        </>
+            <div className="home-row">
+                <JoinRoom />    
+                <section className="dialog">
+                    <h2>New Spawn</h2>
+                    <ul className="">
+                        { sRankLinks }
+                    </ul>
+                </section> 
+            </div>
+        </main>
     );
 }

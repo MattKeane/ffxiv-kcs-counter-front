@@ -17,23 +17,25 @@ export default function JoinRoom() {
 
     return (
         <>
-            <h2>Join a Spawn Attempt in Progress</h2>
-            <div style={{ marginBottom: ".5rem" }}>
-                <TextField
-                    label="Room Code"
-                    name="roomCode"
-                    id="roomCode"
-                    value={ roomCode }
-                    onChange={ handleChange }
-                    variant="standard"
-                />
+            <div className="dialog">
+                <h2>Continue Spawn</h2>            
+                <div style={{ marginBottom: ".5rem" }}>
+                    <TextField
+                        label="Room Code"
+                        name="roomCode"
+                        id="roomCode"
+                        value={ roomCode }
+                        onChange={ handleChange }
+                        variant="standard"
+                    />
+                </div>
+                <Button 
+                    id="joinRoomBtn"
+                    onClick={ handleSubmit }
+                >
+                    Join
+                </Button>
             </div>
-            <Button 
-                variant="contained"
-                onClick={ handleSubmit }
-            >
-                Join
-            </Button>
         </>
     );
 };

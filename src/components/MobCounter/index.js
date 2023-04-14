@@ -80,7 +80,7 @@ export default function MobCounter({ name, defaultLap, room, startingCount }) {
     };
 
     return (
-        <Card variant="outlined" sx={{ display: "inline-block", margin: 2 }}>
+        <Card variant="outlined" sx={{ display: "inline-block", margin: 2 }} className="dialog">
             <h3>{ name }</h3>
             <p>{ count } / 100</p>
             <div style={{ display: 'flex', justifyContent: 'space-evenly'}}>
@@ -111,6 +111,7 @@ export default function MobCounter({ name, defaultLap, room, startingCount }) {
             </div>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-evenly', margin: 1, padding: 10 }}>
                 <TextField
+                    className="text-input"
                     label="Mobs per Lap"
                     inputProps={{ inputMode: 'numeric', pattern: '[0-9]* '}}
                     value={ lapCount }

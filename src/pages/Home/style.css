@@ -1,8 +1,23 @@
+.home {
+    background: #000;
+    color: #fff;   
+}
+
 ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 li {
-    margin-top: .25rem;
+  margin-top: 0.25rem;
+}
+
+.MuiButton-root,
+button {
+  font-family: "Silkscreen", cursive;
+}
+
+.home-row {
+  display: flex;
+  flex-direction: row;
 }

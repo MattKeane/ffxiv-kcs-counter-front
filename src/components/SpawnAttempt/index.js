@@ -39,7 +39,7 @@ export default function SpawnAttempt({ name, mobs, room }) {
 
     return (
         <>
-            <h2>{ name }</h2>
+            <h2 className="spawn-name">{ name }</h2>
             <div>
                 { mobCounters }
             </div>

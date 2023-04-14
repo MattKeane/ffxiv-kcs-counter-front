@@ -1,5 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+
+html {
+  font-size: 20px;
+}
+
 body {
-  font-family: 'Inter', sans-serif;
+  margin: 0;
+  /* font-family: 'Inter', sans-serif; */
+  /* font-family: 'VT323', monospace; */
+  /* font-family: 'DotGothic16', monospace; */
+  font-family: 'Silkscreen', cursive;
   /* background-color: #000044;
   color: #f2c363; */
+  /* bg source: https://www.spriters-resource.com/pc_computer/finalfantasy4pixelremaster/sheet/177206/?source=genre*/
+  background: #000 url('./assets/bg-sprite4.png') no-repeat center center;
+  background-attachment: fixed;
+  background-size: cover;
+  /* -ms-interpolation-mode: nearest-neighbor;
+    image-rendering: pixelated; */
 }
