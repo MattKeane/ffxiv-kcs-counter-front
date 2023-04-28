@@ -8,6 +8,7 @@ import {
     Link
 } from 'react-router-dom';
 import { joinRoom } from '../../utilities/socket-service';
+import Loading from '../../components/Loading';
 import SpawnAttempt from '../../components/SpawnAttempt';
 
 export default function Room({ setMessage }) {
@@ -37,7 +38,7 @@ export default function Room({ setMessage }) {
         {
             loading
             ?
-            <p>Loading...</p>
+            <Loading />
             :
             <SpawnAttempt name={ sRank } mobs={ mobs } room={ room } />
         }
