@@ -171,3 +171,7 @@ h1 {
 .room .dialog {
   min-width: 300px;
 }
+
+footer div {
+  text-align: center;
+}
