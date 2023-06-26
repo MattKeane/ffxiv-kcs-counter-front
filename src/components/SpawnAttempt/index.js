@@ -1,4 +1,5 @@
 import MobCounter from '../MobCounter';
+import UrlWidget from '../UrlWidget';
 
 import './style.css';
 
@@ -39,6 +40,7 @@ export default function SpawnAttempt({ name, mobs, room }) {
 
     return (
         <>
+            <UrlWidget />
             <h2 className="spawn-name">{ name }</h2>
             <div>
                 { mobCounters }

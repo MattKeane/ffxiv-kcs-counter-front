@@ -1,0 +1,11 @@
+.urlWidget {
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: .25rem;
+    border-radius: .25rem;
+}
+
+.clipboardIcon {
+    height: 0.25rem;
+    width: 0.25rem;
+}
