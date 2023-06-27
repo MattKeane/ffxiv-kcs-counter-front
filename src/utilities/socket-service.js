@@ -10,7 +10,7 @@ export function joinRoom(room) {
             } else {
                 reject(response.error);
             }
-        })
+        });
     });
 };
 
@@ -23,5 +23,5 @@ export function registerUpdateListener(mob, handler) {
     const removeUpdateListener = () => {
         socket.off(`update:${mob}`, handler);
     };
-    return removeUpdateListener();
+    return removeUpdateListener;
 };
