@@ -8,6 +8,8 @@ import {
 import Home from './pages/Home';
 import Room from './pages/Room';
 
+import InfoButton from './components/InfoButton';
+
 import './App.css';
 
 function App() {
@@ -19,6 +21,7 @@ function App() {
         <Route path="/" element={<Home message={ message } />} />
         <Route path=":room" element={ <Room setMessage={ setMessage } /> } />
       </Routes>
+      <InfoButton />
       <footer>
       <div>
         <small>FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.
