@@ -1,9 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { 
-    Button,
-    TextField,
-} from '@mui/material';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 export default function JoinRoom() {
     const [roomCode, setRoomCode] = useState('');

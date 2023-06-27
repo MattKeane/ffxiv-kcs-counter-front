@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { Button } from '@mui/material';
+import Button from '@mui/material/Button';
 
 import JoinRoom from '../../components/JoinRoom';
 import { createRoom } from '../../utilities/rooms-service';

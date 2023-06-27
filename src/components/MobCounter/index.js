@@ -2,12 +2,10 @@ import {
     useState,
     useEffect, 
 } from 'react';
-import {
-    Card,
-    ButtonGroup,
-    Button,
-    TextField,
-} from '@mui/material';
+import Card from '@mui/material/Card';
+import ButtonGroup from '@mui/material/ButtonGroup';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 import { 
     incrementMob,
     registerUpdateListener, 
