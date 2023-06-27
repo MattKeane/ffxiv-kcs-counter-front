@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './style.css';
 import IconButton from '@mui/material/IconButton';
+import Button from '@mui/material/Button';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
 export default function UrlWidget() {
@@ -19,16 +20,14 @@ export default function UrlWidget() {
     return (
         <div className="urlWidget">
             <p>
-                { currentUrl }
-                <IconButton 
-                    aria-label="copy" 
-                    color="primary"
+                { currentUrl }             
+            </p>
+                <Button 
+                    startIcon={ <ContentCopyIcon /> }
                     onClick={ handleClick }
                 >
-                    <ContentCopyIcon />
-                </IconButton>                
-            </p>
-            <small>{ message }</small>
+                    { message }
+                </Button>              
         </div>
     );
 }

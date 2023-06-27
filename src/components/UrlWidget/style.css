@@ -6,6 +6,11 @@
     border: 2px solid #fff;
 }
 
-.urlWidget p {
-    margin: 0;
+.urlWidget button {
+    font-family: "Silkscreen", cursive;
+    color: red;
+}
+
+.urlWidget button:hover {
+    color: #fc3; 
 }
