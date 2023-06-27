@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import './style.css';
-import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
