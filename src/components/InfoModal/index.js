@@ -1,3 +1,9 @@
+import Card from '@mui/material/Card';
+
 export default function InfoModal() {
-    return <h1>This is the Info Modal</h1>
+    return (
+        <Card className="dialog">
+            <h2>Info Modal</h2>
+        </Card>
+    )
 };
