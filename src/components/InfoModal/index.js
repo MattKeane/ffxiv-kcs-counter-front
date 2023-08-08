@@ -1,8 +1,9 @@
 import Card from '@mui/material/Card';
+import './style.css';
 
 export default function InfoModal() {
     return (
-        <Card className="dialog">
+        <Card className="dialog" id="infoModal">
             <h3>Welcome to TeamSpawn!</h3>
             <p>TeamSpawn is a tool to help you keep track of the mobs you kill while attempting to spawn S rank hunts in Final Fantasy XIV. Unlike other mob trackers, TeamSpawn allows you to share your progress with other players. As you increment the mobs you have killed, TeamSpawn will automatically other users' mob counts!</p>
             <h2>Starting a New Spawn Attempt</h2>

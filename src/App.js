@@ -32,6 +32,7 @@ function App() {
       <Backdrop
         open={ showModal }
         onClick={ handleClose }
+        sx={{ overflow: 'scroll', zIndex: 2 }}
       >
         <InfoModal />
       </Backdrop>
