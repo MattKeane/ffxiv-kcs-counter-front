@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?&family=Roboto+Mono&display=swap');
+
+#infoModal {
+    overflow: scroll !important;
+    max-width: 700px;
+}
+
+#infoModal h2 {
+    text-align: center;
+}
+
+#infoModal p {
+    text-align: justify;
+    font-family: 'Roboto Mono', monospace;
+    margin: .75rem .25rem;
+}

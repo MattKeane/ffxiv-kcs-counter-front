@@ -1,0 +1,13 @@
+.infoButtonContainer {
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.infoButtonContainer button {
+    color: #fff;
+}
+
+.infoButtonContainer button:hover {
+    color: #fc3; 
+}
