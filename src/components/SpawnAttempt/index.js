@@ -28,6 +28,8 @@ export default function SpawnAttempt({ name, mobs, room }) {
         'Earth Sprite': 14,
     };
 
+    const maxCount = name === 'Leucrotta' ? 50 : 100;
+
     const mobCounters = mobs.map((mob, i) => (
         <MobCounter 
             key={ i }
@@ -35,6 +37,7 @@ export default function SpawnAttempt({ name, mobs, room }) {
             defaultLap={ defaultLaps[mob.name] }
             startingCount={ mob.count }
             room={ room }
+            maxCount={ maxCount }
         />)
     );
 

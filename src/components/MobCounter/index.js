@@ -13,7 +13,7 @@ import {
 
 import './style.css';
 
-export default function MobCounter({ name, defaultLap, room, startingCount }) {
+export default function MobCounter({ name, defaultLap, room, startingCount, maxCount }) {
     // component for counting kills of an individual mob
     // name prop specifies the name prop
     // defaultLap prop specifies how many mobs lap
@@ -28,7 +28,7 @@ export default function MobCounter({ name, defaultLap, room, startingCount }) {
     const addOne = e => {
         // increments the number of mobs killed by one
         e.preventDefault();
-        if (count + 1 <= 100) {
+        if (count + 1 <= maxCount) {
             incrementMob(room, name, 1);
             setCount(count => count + 1);
         }
@@ -46,12 +46,12 @@ export default function MobCounter({ name, defaultLap, room, startingCount }) {
     const addLap = e => {
         // increments the number of mobs killed by the amount in a lap
         e.preventDefault();
-        if (count + lapCount <= 100) {
+        if (count + lapCount <= maxCount) {
             incrementMob(room, name, lapCount);
             setCount(count => count + lapCount);
         } else {
-            incrementMob(room, name, 100 - count);
-            setCount(100);
+            incrementMob(room, name, maxCount - count);
+            setCount(maxCount);
         }
     };
 
@@ -77,12 +77,12 @@ export default function MobCounter({ name, defaultLap, room, startingCount }) {
         }
     };
 
-    const countStyle = count === 100 ? { color: "#11FF11" } : { color: "white" };
+    const countStyle = count === maxCount ? { color: "#11FF11" } : { color: "white" };
 
     return (
         <Card variant="outlined" sx={{ display: "inline-block", margin: 2 }} className="dialog">
             <h3>{ name }</h3>
-            <p style={ countStyle }>{ count } / 100</p>
+            <p style={ countStyle }>{ count } / { maxCount }</p>
             <div style={{ display: 'flex', justifyContent: 'space-evenly'}}>
             <ButtonGroup 
                 orientation="vertical" 
